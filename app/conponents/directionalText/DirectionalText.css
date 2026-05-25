@@ -1,0 +1,67 @@
+.directional-text {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  cursor: pointer;
+
+  /* 关键：使用两层颜色 */
+  background: linear-gradient(
+    var(--default-color) 50%,
+    var(--fill-color) 50%
+  );
+  background-size: 100% 200%;
+  background-position: 0% 0%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: background-position var(--duration) ease;
+}
+
+/* 默认是原始颜色 */
+.directional-text {
+  background-position: 0% 0%;
+}
+
+/* 不同方向进入时的目标位置 */
+.directional-text.top {
+  background-position: 0% 100%;
+}
+
+.directional-text.bottom {
+  background-position: 0% -100%;
+}
+
+.directional-text.left,
+.directional-text.right {
+  background-image: linear-gradient(
+    90deg,
+    var(--default-color) 50%,
+    var(--fill-color) 50%
+  );
+  background-size: 200% 100%;
+}
+
+.directional-text.left {
+  background-position: 100% 0%;
+}
+
+.directional-text.right {
+  background-position: -100% 0%;
+}
+
+/* 触发动画 */
+.directional-text:hover {
+  background-position: 0% 100% !important;   /* top */
+}
+
+.directional-text.bottom:hover {
+  background-position: 0% -100% !important;
+}
+
+.directional-text.left:hover {
+  background-position: 100% 0% !important;
+}
+
+.directional-text.right:hover {
+  background-position: -100% 0% !important;
+}

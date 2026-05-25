@@ -1,0 +1,25 @@
+@import "tailwindcss";
+html,body{
+    height: 100%;
+}
+@layer base {
+    :root {
+        --home-main-color: #ff5a1f;
+        --home-primary-color: #001f54;
+
+        --crypto-main-color: #bfff00;
+        --crypto-primary-color: #222222;
+
+        --polymarket-main-color: #6a0dad;
+        --polymarket-primary-color: #fff300;
+
+        --swap-main-color: #ffb7c5;
+        --swap-primary-color: #014421;
+
+        --wallte-main-color: #98ff98;
+        --wallte-primary-color: #d2042d;
+
+        --other-main-color: #00f0ff;
+        --other-primary-color: #9d00ff;
+    }
+}
