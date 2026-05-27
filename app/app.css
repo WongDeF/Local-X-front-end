@@ -6,20 +6,26 @@ html,body{
     :root {
         --home-main-color: #ff5a1f;
         --home-primary-color: #001f54;
+        --home-text-color: #f8b49c;
 
         --crypto-main-color: #bfff00;
         --crypto-primary-color: #222222;
+        --crypto-text-color: #d9f28c;
 
         --polymarket-main-color: #6a0dad;
         --polymarket-primary-color: #fff300;
+        --polymarket-text-color: #916faa;
 
         --swap-main-color: #ffb7c5;
         --swap-primary-color: #014421;
+        --swap-text-color: #fadae0;
 
-        --wallte-main-color: #98ff98;
-        --wallte-primary-color: #d2042d;
+        --wallet-main-color: #98ff98;
+        --wallet-primary-color: #d2042d;
+        --wallet-text-color: #c5f9c5;
 
         --other-main-color: #00f0ff;
         --other-primary-color: #9d00ff;
+        --other-text-color: #acf7fc;
     }
 }

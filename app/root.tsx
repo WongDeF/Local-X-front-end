@@ -10,6 +10,8 @@ import {
 import Navbar from "~/conponents/navbar/navbar"; 
 import type { Route } from "./+types/root";
 import "./app.css";
+import { ElLocaleConfigProvider } from "~/provider/elLocaleConfigProvider";
+import './locale/i18n/index';
 export function Layout({ children }: { children: React.ReactNode }) {
  
   return (
@@ -22,8 +24,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body >
         <div className="w-full h-full">
+        <ElLocaleConfigProvider>
           <Navbar />
           {children}
+        </ElLocaleConfigProvider>
         </div>
         <ScrollRestoration />
         <Scripts/>

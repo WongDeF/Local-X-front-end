@@ -10,7 +10,7 @@ interface DirectionalTextProps {
   fillColor?: string;
   defaultColor?: string;
   duration?: number;
-  path: string
+  path?: string
 }
 
 export default function DirectionalText({
@@ -19,7 +19,7 @@ export default function DirectionalText({
   fillColor = '#3b82f6',
   defaultColor = '#ffffff',
   duration = 0.6,
-  path = '/'
+  path = ''
 }: DirectionalTextProps) {
   const [direction, setDirection] = useState<'top' | 'right' | 'bottom' | 'left' | ''>('');
 

@@ -1,5 +1,6 @@
 
-
+import { useParams } from "react-router";
 export default function Exchange() {
-  return <h1>exchange</h1>;
+  const { id } = useParams()
+  return <h1>exchange params {id}</h1>;
 }

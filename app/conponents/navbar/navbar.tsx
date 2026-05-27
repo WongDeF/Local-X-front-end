@@ -1,28 +1,39 @@
 import { memo, type MouseEvent } from "react";
+import { useLocation } from "react-router";
+import { routerColor, navs } from "~/constant";
+import useLanguageStore from '~/store/LanguageStore'
+import { useTranslation } from 'react-i18next';
 import DirectionalText from "../directionalText/DirectionalText";
-
-
 const Navbar = () => {
-    const navs = [
-        { title: "Local-X", link: "/" },
-        { title: "crypto", link: "/crypto" },
-        { title: "polymarket", link: "/polymarket" },
-        { title: "swap", link: "/swap" },
-        { title: "wallet", link: "/wallet" },
-    ];
+    const location = useLocation()
+    const colors = routerColor[location.pathname]
+    const { language, setLanguage } = useLanguageStore()
+    const { t, i18n } = useTranslation();
+    const changeLanguage = () => {
+        const lgg = language === 'zh' ? 'en':'zh'
+        setLanguage(lgg)
+        i18n.changeLanguage(lgg);
+    }
     return (
-        <div className="flex justify-end p-1 bg-[var(--home-main-color)]">
+        <div className={`flex justify-end p-1`} style={{ backgroundColor: colors.primary }}>
             {navs.map((item) => (
                 <DirectionalText
                     key={item.link}
                     path={item.link}
-                    fillColor="#60a5fa"
-                    defaultColor="#e5e7eb"
+                    fillColor={colors.main}
+                    defaultColor={colors.text}
                     className="font-bold p-2"
                 >
-                    {item.title}
+                    {t(`nav.${item.title}`)}
                 </DirectionalText>
             ))}
+            <DirectionalText
+                fillColor={colors.main}
+                defaultColor={colors.text}
+                className="font-bold p-2"
+            >
+                <span onClick={() => changeLanguage()}>{language === 'zh' ? 'en' : 'zh'}</span>
+            </DirectionalText>
         </div>
     );
 };

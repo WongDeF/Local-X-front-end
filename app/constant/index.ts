@@ -1,26 +1,46 @@
-export const routerColor = {
-    home: {
-        m: 'var(--home-main-color)',
-        p: 'var(--home-primary-color)',
+interface RouterColor {
+    [key: string]: {
+        main: string;
+        primary: string;
+        text: string;
+    };
+}
+export const routerColor: RouterColor = {
+    '/': {
+        main: 'var(--home-main-color)',
+        primary: 'var(--home-primary-color)',
+        text: 'var(--home-text-color)',
     },
-    crypto: {
-        m: 'var(--crypto-main-color)',
-        p: 'var(--crypto-primary-color)',
+    '/crypto': {
+        main: 'var(--crypto-main-color)',
+        primary: 'var(--crypto-primary-color)',
+        text: 'var(--crypto-text-color)',
     },
-    polymarket: {
-        m: 'var(--polymarket-main-color)',
-        p: 'var(--polymarket-primary-color)',
+    '/polymarket': {
+        main: 'var(--polymarket-main-color)',
+        primary: 'var(--polymarket-primary-color)',
+        text: 'var(--polymarket-text-color)',
     },
-    swap: {
-        m: 'var(--swap-main-color)',
-        p: 'var(--swap-primary-color)',
+    '/swap': {
+        main: 'var(--swap-main-color)',
+        primary: 'var(--swap-primary-color)',
+        text: 'var(--swap-text-color)',
     },
-    wallte: {
-        m: 'var(--wallte-main-color)',
-        p: 'var(--wallte-primary-color)',
+    '/wallet': {
+        main: 'var(--wallet-main-color)',
+        primary: 'var(--wallet-primary-color)',
+        text: 'var(--wallet-text-color)',
     },
-    other: {
-        m: 'var(--other-main-color)',
-        p: 'var(--other-primary-color)',
+    '/other': {
+        main: 'var(--other-main-color)',
+        primary: 'var(--other-primary-color)',
+        text: 'var(--other-text-color)',
     }
 }
+export const navs: { title: string; link: string }[] = [
+    { title: "Local-X", link: "/" },
+    { title: "crypto", link: "/crypto" },
+    { title: "polymarket", link: "/polymarket" },
+    { title: "swap", link: "/swap" },
+    { title: "wallet", link: "/wallet" },
+];
