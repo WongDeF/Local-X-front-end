@@ -3,29 +3,40 @@ html,body{
     height: 100%;
 }
 @layer base {
-    :root {
-        --home-main-color: #ff5a1f;
-        --home-primary-color: #001f54;
-        --home-text-color: #f8b49c;
+    :root,
+    [data-route="home"] {
+        --main-color: #ff5a1f;
+        --primary-color: #001f54;
+        --text-color: #f8b49c;
+    }
 
-        --crypto-main-color: #bfff00;
-        --crypto-primary-color: #222222;
-        --crypto-text-color: #d9f28c;
+    [data-route="crypto"] {
+        --main-color: #bfff00;
+        --primary-color: #222222;
+        --text-color: #d9f28c;
+    }
 
-        --polymarket-main-color: #6a0dad;
-        --polymarket-primary-color: #fff300;
-        --polymarket-text-color: #916faa;
+    [data-route="polymarket"] {
+        --main-color: #6a0dad;
+        --primary-color: #fff300;
+        --text-color: #916faa;
+    }
 
-        --swap-main-color: #ffb7c5;
-        --swap-primary-color: #014421;
-        --swap-text-color: #fadae0;
+    [data-route="swap"] {
+        --main-color: #ffb7c5;
+        --primary-color: #014421;
+        --text-color: #fadae0;
+    }
 
-        --wallet-main-color: #98ff98;
-        --wallet-primary-color: #d2042d;
-        --wallet-text-color: #c5f9c5;
+    [data-route="wallet"] {
+        --main-color: #98ff98;
+        --primary-color: #d2042d;
+        --text-color: #c5f9c5;
+    }
 
-        --other-main-color: #00f0ff;
-        --other-primary-color: #9d00ff;
-        --other-text-color: #acf7fc;
+    [data-route="other"] {
+        --main-color: #00f0ff;
+        --primary-color: #9d00ff;
+        --text-color: #acf7fc;
     }
 }

@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { DatePicker } from "antd";
+import Conditions from "./conditions/conditions";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Local-X" },
@@ -8,6 +8,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <div className="w-full"> <DatePicker />
+  return <div className="w-full">
+    <Conditions/>
   </div>;
 }

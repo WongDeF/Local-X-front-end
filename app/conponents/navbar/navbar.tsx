@@ -1,39 +1,42 @@
-import { memo, type MouseEvent } from "react";
-import { useLocation } from "react-router";
-import { routerColor, navs } from "~/constant";
+import { memo, useCallback, useState } from "react";
+import { navs } from "~/constant";
 import useLanguageStore from '~/store/LanguageStore'
 import { useTranslation } from 'react-i18next';
 import DirectionalText from "../directionalText/DirectionalText";
+import MiniBar from "./miniBar"
+import { MenuOutlined } from '@ant-design/icons';
 const Navbar = () => {
-    const location = useLocation()
-    const colors = routerColor[location.pathname]
+    const [open, setOpen] = useState(false);
     const { language, setLanguage } = useLanguageStore()
     const { t, i18n } = useTranslation();
     const changeLanguage = () => {
         const lgg = language === 'zh' ? 'en':'zh'
         setLanguage(lgg)
         i18n.changeLanguage(lgg);
+        window.location.reload()
     }
-    return (
-        <div className={`flex justify-end p-1`} style={{ backgroundColor: colors.primary }}>
-            {navs.map((item) => (
-                <DirectionalText
-                    key={item.link}
-                    path={item.link}
-                    fillColor={colors.main}
-                    defaultColor={colors.text}
-                    className="font-bold p-2"
-                >
-                    {t(`nav.${item.title}`)}
-                </DirectionalText>
-            ))}
+    const getNavs = useCallback(() => {
+        return navs.map((item) => (
             <DirectionalText
-                fillColor={colors.main}
-                defaultColor={colors.text}
-                className="font-bold p-2"
+                key={item.link}
+                path={item.link}
             >
+                {t(`nav.${item.title}`)}
+            </DirectionalText>
+        ))
+    }, [language])
+    return (
+        <div className={`flex justify-end p-1 bg-[var(--primary-color)]`}>
+            <div className="flex justify-end flex-2 max-md:hidden">
+                {getNavs()}
+            </div>
+            <DirectionalText>
                 <span onClick={() => changeLanguage()}>{language === 'zh' ? 'en' : 'zh'}</span>
             </DirectionalText>
+            <span className="md:hidden cursor-pointer flex items-center">
+                <MenuOutlined onClick={() => setOpen(!open)} className="hover:rotate-270 transition" style={{ color: 'var(--text-color)' }}/>
+            </span>
+            <MiniBar open={open} setOpen={setOpen} navs={getNavs()}/>
         </div>
     );
 };

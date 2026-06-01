@@ -15,12 +15,13 @@ interface DirectionalTextProps {
 
 export default function DirectionalText({
   children,
-  className = '',
-  fillColor = '#3b82f6',
-  defaultColor = '#ffffff',
+  className = 'font-bold p-2',
+  fillColor = 'var(--main-color)',
+  defaultColor = 'var(--text-color)',
   duration = 0.6,
   path = ''
 }: DirectionalTextProps) {
+
   const [direction, setDirection] = useState<'top' | 'right' | 'bottom' | 'left' | ''>('');
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -43,25 +44,33 @@ export default function DirectionalText({
   const handleMouseLeave = () => {
     setDirection('');
   };
-
   return (
     <div
       className={`directional-wrapper ${className}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-        <NavLink to={path}>
-          <span 
-            className={`directional-text ${direction}`}
-            style={{
-              '--fill-color': fillColor,
-              '--default-color': defaultColor,
-              '--duration': `${duration}s`,
-            } as React.CSSProperties}
-          >
-            {children}
-          </span>
-      </NavLink>
+      {path ? <NavLink to={path}>
+        <span
+          className={`directional-text ${direction}`}
+          style={{
+            '--fill-color': fillColor,
+            '--default-color': defaultColor,
+            '--duration': `${duration}s`,
+          } as React.CSSProperties}
+        >
+          {children}
+        </span>
+      </NavLink> : <span
+        className={`directional-text ${direction}`}
+        style={{
+          '--fill-color': fillColor,
+          '--default-color': defaultColor,
+          '--duration': `${duration}s`,
+        } as React.CSSProperties}
+      >
+        {children}
+      </span>}
     </div>
   );
 }
