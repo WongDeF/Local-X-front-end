@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { NavLink } from "react-router";
-import './DirectionalText.css';
+import './index.css';
 
 interface DirectionalTextProps {
   children: React.ReactNode;

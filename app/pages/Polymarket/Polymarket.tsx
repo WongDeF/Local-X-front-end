@@ -1,4 +1,4 @@
-import type { Route } from "./+types/polymarket";
+import type { Route } from "./+types/Polymarket";
 
 export function meta({}: Route.MetaArgs) {
   return [

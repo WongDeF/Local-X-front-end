@@ -2,7 +2,7 @@ import { memo, useCallback, useState } from "react";
 import { navs } from "~/constant";
 import useLanguageStore from '~/store/LanguageStore'
 import { useTranslation } from 'react-i18next';
-import DirectionalText from "../directionalText/DirectionalText";
+import DirectionalText from "../DirectionalText";
 import MiniBar from "./miniBar"
 import { MenuOutlined } from '@ant-design/icons';
 const Navbar = () => {

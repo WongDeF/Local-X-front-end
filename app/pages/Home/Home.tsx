@@ -1,5 +1,5 @@
-import type { Route } from "./+types/home";
-import Conditions from "./conditions/conditions";
+import type { Route } from "./+types/Home";
+import Conditions from "./Conditions/Conditions";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Local-X" },

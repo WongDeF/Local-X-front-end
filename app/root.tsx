@@ -7,7 +7,7 @@ import {
   Scripts
 } from "react-router";
 
-import Navbar from "~/conponents/navbar/navbar"; 
+import Navbar from "~/conponents/navbar"; 
 import type { Route } from "./+types/root";
 import "./app.css";
 import { ElLocaleConfigProvider } from "~/provider/elLocaleConfigProvider";
