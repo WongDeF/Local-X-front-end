@@ -1,6 +1,6 @@
 import { memo, useEffect } from "react";
 import { Row } from 'antd';
-import { useTickerStore } from '~/store/useTickerStore';
+import { useTickerStore } from '~/store/UseTickerStore';
 import TickerCard from "./TickerCard";
 const resSymbols = ["BTCUSDT", "ETHUSDT", "PEPEUSDT", "BNBUSDT", "DOGEUSDT", "XRPUSDT", "SOLUSDT", "SUIUSDT"]
 const Conditions = () => {

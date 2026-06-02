@@ -10,8 +10,8 @@ import {
 import Navbar from "~/conponents/navbar"; 
 import type { Route } from "./+types/root";
 import "./app.css";
-import { ElLocaleConfigProvider } from "~/provider/elLocaleConfigProvider";
-import { RouteThemeProvider } from "~/provider/routeThemeProvider";
+import { ElLocaleConfigProvider } from "./provider/ElLocaleConfigProvider";
+import { RouteThemeProvider } from "~/provider/RouteThemeProvider";
 import './locale/i18n/index';
 export function Layout({ children }: { children: React.ReactNode }) {
  

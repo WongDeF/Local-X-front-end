@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Col } from 'antd';
-import { useTickerStore } from '~/store/useTickerStore';
+import { useTickerStore } from '~/store/UseTickerStore';
 const Item = memo(({symbol}: {symbol: string}) => {
   const ticker = useTickerStore((state) => state.tickers[symbol]);
   return <div className="flex justify-between text-white">
