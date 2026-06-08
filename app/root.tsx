@@ -14,7 +14,6 @@ import { ElLocaleConfigProvider } from "./provider/ElLocaleConfigProvider";
 import { RouteThemeProvider } from "~/provider/RouteThemeProvider";
 import './locale/i18n/index';
 export function Layout({ children }: { children: React.ReactNode }) {
- 
   return (
     <html lang="en">
       <head>
@@ -24,11 +23,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body >
-        <div className="w-full h-full">
+        <div className="min-w-full min-h-full bg-[#181a1f]">
         <ElLocaleConfigProvider>
           <RouteThemeProvider>
             <Navbar />
-            {children}
+            <div className="xl:w-[1200px] max-xl:mx-4 mx-auto">
+              {children}
+            </div>
           </RouteThemeProvider>
         </ElLocaleConfigProvider>
         </div>

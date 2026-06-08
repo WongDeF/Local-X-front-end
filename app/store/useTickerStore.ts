@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { getTicker24hr } from '~/services/binance/binance';
-import { binanceSocket } from '~/services/binanceSocket';
+import { binanceSocket } from '~/services/socket/binanceSocket';
 
 interface TickerState {
   tickers: Record<string, Ticker24hr>;
@@ -91,7 +91,6 @@ export const useTickerStore = create<TickerState & TickerActions>((set, get) => 
 
     get().cleanup();
     set({ isLoading: true, error: null, _pendingUpdates: new Map(), _rafId: null });
-
     try {
         // 1. 一次请求获取所有交易对数据
         const res = await getTicker24hr({

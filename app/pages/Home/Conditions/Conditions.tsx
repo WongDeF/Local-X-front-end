@@ -1,8 +1,7 @@
 import { memo, useEffect } from "react";
-import { Row } from 'antd';
-import { useTickerStore } from '~/store/UseTickerStore';
+import { useTickerStore } from '~/store/useTickerStore';
 import TickerCard from "./TickerCard";
-const resSymbols = ["BTCUSDT", "ETHUSDT", "PEPEUSDT", "BNBUSDT", "DOGEUSDT", "XRPUSDT", "SOLUSDT", "SUIUSDT"]
+const resSymbols = ["BTCUSDT", "ETHUSDT", "PEPEUSDT", "BNBUSDT", "DOGEUSDT", "XRPUSDT", "SOLUSDT", "SUIUSDT", "ADAUSDT"]
 const Conditions = () => {
     const { tickers, isLoading, error, initTickers, cleanup } = useTickerStore();
     useEffect(() => {
@@ -10,14 +9,12 @@ const Conditions = () => {
         return () => cleanup(); // 清理
     }, []);
 
-    if (isLoading) return <div>Loading market data...</div>;
-    if (error) return <div>Error: {error}</div>;
-    return <div className="mx-2">
-        <Row gutter={20}>
-            <TickerCard key='hot' symbols={resSymbols} />
-            <TickerCard key='new' symbols={resSymbols} />
-            <TickerCard key='vom' symbols={resSymbols} />
-        </Row>
+    // if (isLoading) return <div>Loading market data...</div>;
+    // if (error) return <div>Error: {error}</div>;
+    return <div className="my-4 grid grid-cols-3 max-md:grid-cols-1 gap-4" >
+        <TickerCard key='hot' symbols={resSymbols.slice(0, 3)} title="hot" />
+        <TickerCard key='new' symbols={resSymbols.slice(3, 6)} title="new"/>
+        <TickerCard key='volume' symbols={resSymbols.slice(6, 9)} title="volume" />
     </div>
 }
 export default memo(Conditions)

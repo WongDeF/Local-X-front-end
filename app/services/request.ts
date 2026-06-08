@@ -3,8 +3,8 @@ import axios from "axios"
 
 // 创建一个 Axios 实例
 const service = axios.create({
-    baseURL: '/api',      // 你的 API 基础路径
-    timeout: 15000,        // 请求超时时间，单位毫秒
+    baseURL: '',      // 你的 API 基础路径
+    timeout: 10000,        // 请求超时时间，单位毫秒
     headers: {
         'Content-Type': 'application/json', // 默认请求头
     },

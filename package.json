@@ -9,10 +9,12 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
+    "@polymarket/clob-client-v2": "^1.0.6",
     "@react-router/node": "7.15.1",
     "@react-router/serve": "7.15.1",
     "antd": "^6.4.3",
     "axios": "^1.16.1",
+    "bignumber.js": "^11.1.2",
     "i18next": "^26.3.0",
     "i18next-browser-languagedetector": "^8.2.1",
     "isbot": "^5.1.36",
@@ -20,6 +22,7 @@
     "react-dom": "^19.2.6",
     "react-i18next": "^17.0.8",
     "react-router": "7.15.1",
+    "viem": "^2.52.0",
     "zustand": "^5.0.13"
   },
   "devDependencies": {
@@ -28,6 +31,7 @@
     "@types/node": "^22",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "https-proxy-agent": "^9.0.0",
     "less": "^4.6.4",
     "tailwindcss": "^4.3.0",
     "typescript": "^5.9.3",

@@ -1,6 +1,6 @@
 import { memo, useCallback, useState } from "react";
 import { navs } from "~/constant";
-import useLanguageStore from '~/store/LanguageStore'
+import useLanguageStore from '~/store/useLanguageStore'
 import { useTranslation } from 'react-i18next';
 import DirectionalText from "../DirectionalText";
 import MiniBar from "./miniBar"
