@@ -19,5 +19,9 @@ export default {
         homeSubTitle: 'The handling fee is as low as 0.01%',
         homeTitleFee: 'Earn transaction fees',
         homeSubTitleFee: 'By providing liquidity'
+    },
+    btn: {
+        done: 'Done',
+        cancel: 'Cancel',
     }
 }

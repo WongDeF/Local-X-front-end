@@ -1,4 +1,4 @@
-import { memo } from "react"
+import { memo, useId } from "react"
 import type { Event, Market } from "~/services/polymarket/polymarket.types"
 import usePredictStore from "~/store/usePredictStore"
 import { formatVolume, toPercent } from "~/utils/formatPrice"
@@ -22,7 +22,7 @@ const Markets = ({ markets }: { markets: Market[] }) => {
         const { outcomes, outcomePrices } = market
         const outcomesParse = JSON.parse(outcomes) as [string, string]
         const outcomePricesParse = JSON.parse(outcomePrices) as [string, string]
-        return <div className="flex justify-between">
+        return <div key={`Predict-Markets-${market.id}`} className="flex justify-between">
           <p className="text-white text-sm">{market.groupItemTitle}</p>
           <div className="flex gap-2">
             <RenderHoverSwitchText outcomesParse={outcomesParse[0]} outcomePricesParse={outcomePricesParse[0]} clasName="text-green-700 bg-green-700/15 hover:bg-green-700" />
@@ -64,10 +64,11 @@ const PredictItem = ({ item }: { item: Event }) => {
 
 export const Predict = () => {
   const { list } = usePredictStore()
+  const id = useId()
   return <div className="grid h-auto gap-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
     {
-      list.map(x => {
-        return <PredictItem key={x.negRiskMarketID} item={x}></PredictItem>
+      list.map((x, index) => {
+        return <PredictItem key={`${id}-${index}`} item={x}></PredictItem>
       })
     }
   </div>

@@ -30,7 +30,7 @@ const AprItems = ({ data }: { data: AprDataType[] }) => {
     return <>
         {
             data.map(i => {
-                return <div className="flex justify-between items-center h-20 py-2 border-b border-gray-500 hover:scale-102 transition">
+                return <div key={`AprItems${i.symbol}`} className="flex justify-between items-center h-20 py-2 border-b border-gray-500 hover:scale-102 transition">
                     <div className="flex items-center">
                         <SymbolImg symbol={i.symbol} h={40} w={40} />
                         <div className="text-[#f4eeff] flex flex-col ml-2">

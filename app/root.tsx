@@ -13,6 +13,7 @@ import "./app.css";
 import { ElLocaleConfigProvider } from "./provider/ElLocaleConfigProvider";
 import { RouteThemeProvider } from "~/provider/RouteThemeProvider";
 import './locale/i18n/index';
+import Disclaimer from "./conponents/Disclaimer/Disclaimer";
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -30,6 +31,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <div className="xl:w-[1200px] max-xl:mx-4 mx-auto">
               {children}
             </div>
+            <Disclaimer />
           </RouteThemeProvider>
         </ElLocaleConfigProvider>
         </div>

@@ -1,7 +1,9 @@
 export default {
     tips: {
-        welcome: "欢迎使用 React",
-        description: "这是一个多语言应用。"
+        welcome: "欢迎使用 Local-X",
+        description: "这是一个多语言应用。",
+        disclaimer: '声明！',
+        disclaimerInfo: '本项目仅是个人学习开发。本项目纯前端。本项目无商用价值。本项目静态交互。本项目无正式链USDT交易。本项目后续会开发测试链交易。本项目其他功能敬请期待。'
     },
     desc: {
         ConditionsDescription: '加密货币行情概览，基于 Binance REST API 与 WebSocket。首次批量拉取 24h 行情，随后通过 WebSocket 实时推送，Zustand 配合 requestAnimationFrame 批量更新 UI。',

@@ -19,5 +19,9 @@ export default {
         homeSubTitle: '手续费低至 0.01%',
         homeTitleFee: '赚取交易手续费',
         homeSubTitleFee: '通过提供流动性'
+    },
+    btn: {
+        done: '确定',
+        cancel: '取消',
     }
 }

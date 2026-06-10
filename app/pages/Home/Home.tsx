@@ -16,7 +16,7 @@ export function meta({ }: Route.MetaArgs) {
 }
 const DescriptionDom = ({ title }: { title: string }) => {
   const { t } = useTranslation()
-  return <div className="mb-10 text-center ">
+  return <div className="mb-10 text-left ">
     <DirectionalText className="text-4xl">{t(`desc.${title}`)}</DirectionalText>
   </div>
 }
