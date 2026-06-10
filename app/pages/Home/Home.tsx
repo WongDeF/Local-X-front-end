@@ -6,13 +6,20 @@ import usePredictStore from "~/store/usePredictStore";
 import Predict from "./Predict/Predict";
 import Conditions from "./Conditions/Conditions";
 import Swap from "./Swap/Swap";
+import { useTranslation } from "react-i18next";
+import DirectionalText from "~/conponents/DirectionalText";
 export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Local-X" },
     { name: "description", content: "Welcome to Local-X!" },
   ];
 }
-
+const DescriptionDom = ({ title }: { title: string }) => {
+  const { t } = useTranslation()
+  return <div className="mb-10 text-center ">
+    <DirectionalText className="text-4xl">{t(`desc.${title}`)}</DirectionalText>
+  </div>
+}
 export default function Home() {
   const { language } = useLanguageStore()
   const { setPredctList } = usePredictStore()
@@ -29,9 +36,18 @@ export default function Home() {
   useEffect(() => {
     getDatas()
   }, [])
-  return <div className="w-full">
-    <Conditions />
-    <Predict />
-    <Swap />
+  return <div className="w-full pb-40">
+    <div className="my-10">
+      <DescriptionDom title="ConditionsDescription" />
+      <Conditions />
+    </div>
+    <div className="my-20">
+      <DescriptionDom title="PredictDescription" />
+      <Predict />
+    </div>
+    <div>
+      <DescriptionDom title="SwapDescription" />
+      <Swap />
+    </div>
   </div>;
 }

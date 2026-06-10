@@ -64,10 +64,10 @@ const PredictItem = ({ item }: { item: Event }) => {
 
 export const Predict = () => {
   const { list } = usePredictStore()
-  return <div className="grid h-auto gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+  return <div className="grid h-auto gap-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
     {
       list.map(x => {
-        return <PredictItem item={x}></PredictItem>
+        return <PredictItem key={x.negRiskMarketID} item={x}></PredictItem>
       })
     }
   </div>

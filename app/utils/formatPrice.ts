@@ -21,7 +21,7 @@ const formatPrice = (price: Price) => {
     return num.toFixed(2);
 };
 const isGrowth = (rate: string) => {
-    if (!rate) return ''
+    if (!rate) return false
     return rate.includes('-')
 }
 const formatVolume = (value: number | string, decimals: number = 0): string => {

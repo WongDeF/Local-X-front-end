@@ -9,6 +9,8 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
+    "@pancakeswap/tokens": "^0.8.0",
+    "@pancakeswap/v3-sdk": "^3.10.0",
     "@polymarket/clob-client-v2": "^1.0.6",
     "@react-router/node": "7.15.1",
     "@react-router/serve": "7.15.1",

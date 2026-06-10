@@ -11,7 +11,7 @@ const Conditions = () => {
 
     // if (isLoading) return <div>Loading market data...</div>;
     // if (error) return <div>Error: {error}</div>;
-    return <div className="my-4 grid grid-cols-3 max-md:grid-cols-1 gap-4" >
+    return <div className="grid grid-cols-3 max-lg:grid-cols-1 gap-4" >
         <TickerCard key='hot' symbols={resSymbols.slice(0, 3)} title="hot" />
         <TickerCard key='new' symbols={resSymbols.slice(3, 6)} title="new"/>
         <TickerCard key='volume' symbols={resSymbols.slice(6, 9)} title="volume" />
