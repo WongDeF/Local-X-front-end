@@ -63,7 +63,7 @@ const PredictItem = ({ item }: { item: Event }) => {
 }
 
 export const Predict = () => {
-  const { list } = usePredictStore()
+  const list = usePredictStore(s => s.list)
   const id = useId()
   return <div className="grid h-auto gap-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
     {

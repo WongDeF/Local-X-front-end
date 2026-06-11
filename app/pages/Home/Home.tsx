@@ -21,8 +21,11 @@ const DescriptionDom = ({ title }: { title: string }) => {
   </div>
 }
 export default function Home() {
-  const { language } = useLanguageStore()
-  const { setPredctList } = usePredictStore()
+  // 优化
+  // const { language } = useLanguageStore()
+  // const { setPredctList } = usePredictStore()
+  const language = useLanguageStore(s => s.language)
+  const setPredctList = usePredictStore(s => s.setPredctList)
   const getDatas = () => {
     Promise.all([
       getListMarkets({ limit: 4, locale: language, tag_slug: 'sports' }),

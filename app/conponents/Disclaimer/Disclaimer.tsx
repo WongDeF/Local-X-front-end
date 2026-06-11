@@ -40,7 +40,7 @@ const Disclaimer = () => {
             keyboard={false}
             open={isModalOpen}
             footer={
-                <TimeBtn timerNum={6} handleOk={handleOk} tf={t} />
+                <TimeBtn timerNum={1} handleOk={handleOk} tf={t} />
             }
             classNames={{
                 container: '!bg-[var(--primary-color)] text-gray-300'

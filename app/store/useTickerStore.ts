@@ -93,9 +93,7 @@ export const useTickerStore = create<TickerState & TickerActions>((set, get) => 
     set({ isLoading: true, error: null, _pendingUpdates: new Map(), _rafId: null });
     try {
         // 1. 一次请求获取所有交易对数据
-        const res = await getTicker24hr({
-          symbols: JSON.stringify(symbols)
-      });
+      const res = await getTicker24hr({});
       const allTickers = res;
       // 2. 过滤出需要的 symbols
       const filteredTickers: Record<string, Ticker24hr> = {};

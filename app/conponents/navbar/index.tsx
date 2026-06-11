@@ -7,7 +7,8 @@ import MiniBar from "./miniBar"
 import { MenuOutlined } from '@ant-design/icons';
 const Navbar = () => {
     const [open, setOpen] = useState(false);
-    const { language, setLanguage } = useLanguageStore()
+    const language = useLanguageStore(s => s.language)
+    const setLanguage = useLanguageStore(s => s.setLanguage)
     const { t, i18n } = useTranslation();
     const changeLanguage = () => {
         const lgg = language === 'zh' ? 'en':'zh'
