@@ -1,8 +1,8 @@
 export default {
     home: {
-        hot: 'hot',
-        new: 'new',
-        volume: 'volume'
+        hot: 'Hot Coins',
+        gainers: 'Top Gainers',
+        losers: 'Top Losers'
     },
     nav: {
         localx: "Local-X",
@@ -23,5 +23,9 @@ export default {
     btn: {
         done: 'Done',
         cancel: 'Cancel',
+    },
+    crypto: {
+        overview: 'overview',
+        rank: 'rank'
     }
 }

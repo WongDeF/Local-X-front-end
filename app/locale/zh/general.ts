@@ -1,8 +1,8 @@
 export default {
     home: {
         hot: '热门',
-        new: '新币',
-        volume: '成交'
+        gainers: '涨幅',
+        losers: '跌幅'
     },
     nav: {
         localx: "Local-X",
@@ -23,5 +23,9 @@ export default {
     btn: {
         done: '确定',
         cancel: '取消',
+    },
+    crypto: {
+        overview: '总览',
+        rank: '排行'
     }
 }

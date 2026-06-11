@@ -7,15 +7,14 @@ const Conditions = () => {
     const id = useId()
     useEffect(() => {
         initTickers(resSymbols);   // 批量初始化
-        return () => cleanup(); // 清理
     }, []);
 
     // if (isLoading) return <div>Loading market data...</div>;
     // if (error) return <div>Error: {error}</div>;
     return <div className="grid grid-cols-3 max-lg:grid-cols-1 gap-4" >
         <TickerCard key={`${id}-hot`} symbols={resSymbols.slice(0, 3)} title="hot" />
-        <TickerCard key={`${id}-new`} symbols={resSymbols.slice(3, 6)} title="new"/>
-        <TickerCard key={`${id}-volume`} symbols={resSymbols.slice(6, 9)} title="volume" />
+        <TickerCard key={`${id}-gainers`} symbols={resSymbols.slice(3, 6)} title="gainers"/>
+        <TickerCard key={`${id}-losers`} symbols={resSymbols.slice(6, 9)} title="losers" />
     </div>
 }
 export default memo(Conditions)

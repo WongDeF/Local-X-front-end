@@ -33,7 +33,7 @@ const Disclaimer = () => {
     return <>
         <Modal
             title={
-                <p className="text-3xl font-bold text-red-600">{t('tips.disclaimer')}</p>
+                <p className="text-3xl font-bold text-gray-300">{t('tips.disclaimer')}</p>
             }
             width='80%'
             closable={false}
@@ -43,7 +43,7 @@ const Disclaimer = () => {
                 <TimeBtn timerNum={6} handleOk={handleOk} tf={t} />
             }
             classNames={{
-                container: '!bg-[var(--primary-color)] text-red-600'
+                container: '!bg-[var(--primary-color)] text-gray-300'
             }}
         >
             <p className="mt-10 text-2xl font-bold">{t('tips.disclaimerInfo')}</p>
