@@ -2,6 +2,31 @@
 html,body{
     height: 100%;
 }
+.ant-input:hover,
+.ant-input:focus,
+.ant-input-focused,
+.ant-input-outlined:focus,
+.ant-input-outlined:focus-within,
+textarea.ant-input:focus {
+  border-color: transparent !important;   /* 去掉蓝色边框 */
+  box-shadow: none !important;            /* 去掉阴影光晕 */
+  outline: none !important;               /* 去掉外层轮廓 */
+}
+
+/* 方法二：仅移除 TextArea 的聚焦样式 */
+.ant-input-textarea .ant-input:focus,
+.ant-input-textarea .ant-input-focused {
+  border-color: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* 方法三：如果以上未生效，使用组合选择器强制覆盖 */
+.ant-input:where(:focus, :focus-within) {
+  border-color: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
 @layer base {
     :root,
     [data-route="home"] {

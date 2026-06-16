@@ -24,11 +24,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body >
-        <div className="min-w-full min-h-full bg-[#181a1f]">
+        <div className="min-w-full min-h-full bg-[#181a1f] flex flex-col">
         <ElLocaleConfigProvider>
           <RouteThemeProvider>
             <Navbar />
-            <div className="xl:w-[1200px] max-xl:mx-4 mx-auto">
+            <div className="xl:w-[1200px] max-xl:mx-4 mx-auto flex-2">
               {children}
             </div>
             <Disclaimer />

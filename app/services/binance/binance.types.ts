@@ -56,3 +56,16 @@ interface WsTickerMessage {
   L: number;        // 最后一个交易 ID
   n: number;        // 交易数量
 }
+
+interface WsTickerMessageMini {
+  e: string;        // 事件类型 "24hrTicker"
+  E: number;        // 事件时间
+  s: string;        // 交易对
+  c: string;        // 最新价
+  Q: string;        // 最新交易成交量
+  o: string;        // 开盘价
+  h: string;        // 最高价
+  l: string;        // 最低价
+  v: string;        // 基础资产成交量
+  q: string;        // 报价资产成交量
+}

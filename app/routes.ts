@@ -8,5 +8,6 @@ export default [
     ]),
     route("polymarket", "pages/Polymarket/Polymarket.tsx"),
     route("swap", "pages/Swap/Swap.tsx"),
-    route("wallet", "pages/Wallet/Wallet.tsx")
+    route("wallet", "pages/Wallet/Wallet.tsx"),
+    route("chat", "pages/Chat/Chat.tsx")
 ] satisfies RouteConfig;

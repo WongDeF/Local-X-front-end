@@ -9,7 +9,8 @@ export default {
         crypto: "币币",
         polymarket: "预测",
         swap: "交换",
-        wallet: "钱包"
+        wallet: "钱包",
+        chat: "聊"
     },
     public: {
         more: '更多'

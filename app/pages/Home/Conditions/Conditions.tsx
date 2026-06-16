@@ -7,6 +7,9 @@ const Conditions = () => {
     const id = useId()
     useEffect(() => {
         initTickers(resSymbols);   // 批量初始化
+        return () => {
+            cleanup()
+        }
     }, []);
 
     // if (isLoading) return <div>Loading market data...</div>;

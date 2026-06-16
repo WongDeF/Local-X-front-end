@@ -9,7 +9,8 @@ export default {
         crypto: "crypto",
         polymarket: "polymarket",
         swap: "swap",
-        wallet: "wallet"
+        wallet: "wallet",
+        chat: "chat"
     },
     public: {
         more: 'more'

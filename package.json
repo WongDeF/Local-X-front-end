@@ -9,6 +9,8 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
+    "@ant-design/icons": "^6.2.5",
+    "@ant-design/x": "^2.8.0",
     "@pancakeswap/tokens": "^0.8.0",
     "@pancakeswap/v3-sdk": "^3.10.0",
     "@polymarket/clob-client-v2": "^1.0.6",

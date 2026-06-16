@@ -50,4 +50,5 @@ export const navs: { title: string; link: string }[] = [
     { title: "polymarket", link: "/polymarket" },
     { title: "swap", link: "/swap" },
     { title: "wallet", link: "/wallet" },
+    { title: "chat", link: "/chat" },
 ];
