@@ -1,9 +1,13 @@
 import axios from "axios"
-
+// 基础 URL
+const isDev = import.meta.env.DEV;
+const BASE_URL = isDev 
+  ? ''                    // 本地走 proxy
+  : 'https://api.binance.com'; // 线上直接调用
 
 // 创建一个 Axios 实例
 const service = axios.create({
-    baseURL: '',      // 你的 API 基础路径
+    baseURL: BASE_URL,      // 你的 API 基础路径
     timeout: 10000,        // 请求超时时间，单位毫秒
     headers: {
         'Content-Type': 'application/json', // 默认请求头
