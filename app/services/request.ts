@@ -3,7 +3,7 @@ import axios from "axios"
 const isDev = import.meta.env.DEV;
 const BASE_URL = isDev 
   ? ''                    // 本地走 proxy
-  : 'https://api.binance.com'; // 线上直接调用
+  : 'https://api1.binance.com'; // 线上直接调用
 
 // 创建一个 Axios 实例
 const service = axios.create({
