@@ -10,7 +10,7 @@ import {
 import Navbar from "~/conponents/navbar"; 
 import type { Route } from "./+types/root";
 import "./app.css";
-import { ElLocaleConfigProvider } from "./provider/ElLocaleConfigProvider";
+import { ElLocaleConfigProvider } from "~/provider/ElLocaleConfigProvider";
 import { RouteThemeProvider } from "~/provider/RouteThemeProvider";
 import './locale/i18n/index';
 import Disclaimer from "./conponents/Disclaimer/Disclaimer";
