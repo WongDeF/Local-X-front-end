@@ -6,7 +6,10 @@
     "build": "react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "react-router typegen && tsc",
+    "deploy": "npm run build && wrangler deploy",
+    "preview": "npm run build && wrangler dev",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@ant-design/icons": "^6.2.5",
@@ -21,7 +24,6 @@
     "bignumber.js": "^11.1.2",
     "i18next": "^26.3.0",
     "i18next-browser-languagedetector": "^8.2.1",
-    "isbot": "^5.1.36",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-i18next": "^17.0.8",
@@ -30,15 +32,18 @@
     "zustand": "^5.0.13"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.42.4",
     "@react-router/dev": "7.15.1",
     "@tailwindcss/vite": "^4.3.0",
     "@types/node": "^22",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "https-proxy-agent": "^9.0.0",
+    "isbot": "^5.1.44",
     "less": "^4.6.4",
     "tailwindcss": "^4.3.0",
     "typescript": "^5.9.3",
-    "vite": "^8.0.3"
+    "vite": "^8.0.3",
+    "wrangler": "^4.106.0"
   }
 }
