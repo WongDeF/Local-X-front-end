@@ -6,7 +6,7 @@ class BinanceWebSocket {
   private reconnectTimer: NodeJS.Timeout | null = null;
   private url: string;
   private allickerCallback = {} as AllTickerCallBack;
-  constructor(baseUrl = 'wss://stream.binance.com:9443/stream') {
+  constructor(baseUrl = 'ws://localhost:8081/ws/binance') {
     this.url = baseUrl;
   }
   setAllickerCallback(callback: AllTickerCallBack) {
@@ -51,12 +51,12 @@ class BinanceWebSocket {
   private connect() {
     const streams = Array.from(this.subscribers.keys())
       .map(sym => `${sym}@ticker`)
-      .join('/');
+    const params = ["!miniTicker@arr", ...streams];
     const wsUrl = `${this.url}`;
     this.ws = new WebSocket(wsUrl);
 
     this.ws.onopen = () => {
-      this.ws?.send(JSON.stringify({method: "SUBSCRIBE", params: ["!miniTicker@arr"], id: 996}))
+      this.ws?.send(JSON.stringify({method: "SUBSCRIBE", params, id: 996}))
       if (this.reconnectTimer) {
         clearTimeout(this.reconnectTimer)
       };
