@@ -1,7 +1,7 @@
 import type { Config } from "@react-router/dev/config";
 
 export default {
-  // Config options...
-  // Server-side render by default, to enable SPA mode set this to `false`
   ssr: true,
+  // 禁用 Workers 相关功能
+  prerender: false,
 } satisfies Config;

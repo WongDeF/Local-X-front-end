@@ -1,15 +1,13 @@
 import { reactRouter } from "@react-router/dev/vite";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
-import { resolve } from 'path'
+import { resolve } from 'path';
+
 export default defineConfig({
   plugins: [tailwindcss(), reactRouter()],
   resolve: {
-    tsconfigPaths: true,
     alias: {
-      '~': resolve(__dirname, './app'),   // 关键修改
-      // 或者如果你的源码在 src 目录，就改成：
-      // '~': resolve(__dirname, './src'),
+      '~': resolve(__dirname, './app'),
     },
   },
   server: {
@@ -20,6 +18,12 @@ export default defineConfig({
         target: 'http://localhost:8080',
         changeOrigin: true,
       },
+    }
+  },
+  // 关键：告诉 Cloudflare 这是纯前端项目
+  build: {
+    rollupOptions: {
+      external: ['@cloudflare/vite-plugin'],
     }
   }
 });
