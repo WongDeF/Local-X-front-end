@@ -6,7 +6,7 @@ class BinanceWebSocket {
   private reconnectTimer: NodeJS.Timeout | null = null;
   private url: string;
   private allickerCallback = {} as AllTickerCallBack;
-  constructor(baseUrl = 'ws://localhost:8081/ws/binance') {
+  constructor(baseUrl = import.meta.env.VITE_BINANCE_WS_URL || 'ws://localhost:8081/ws/binance') {
     this.url = baseUrl;
   }
   setAllickerCallback(callback: AllTickerCallBack) {
