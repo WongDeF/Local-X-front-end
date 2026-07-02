@@ -20,10 +20,14 @@ export default defineConfig({
       },
     }
   },
-  // 关键：告诉 Cloudflare 这是纯前端项目
-  build: {
-    rollupOptions: {
-      external: ['@cloudflare/vite-plugin'],
+  // 关键修复：禁用 Cloudflare Workers 插件
+  environments: {
+    worker: {
+      build: {
+        rollupOptions: {
+          external: ['@cloudflare/vite-plugin'],
+        }
+      }
     }
   }
 });
